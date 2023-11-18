@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "768127940853",
+    "project_id": "t2023it2-vapemart-cdbb4",
+    "storage_bucket": "t2023it2-vapemart-cdbb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768127940853:android:c9e04c237da136a6272dbc",
+        "android_client_info": {
+          "package_name": "com.example.ite2exam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd7-UVNgQpdluoEG38F-0j9rcXL66T5bI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
