@@ -1,7 +1,6 @@
 package com.example.ite2exam
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -32,8 +31,14 @@ class MainActivity : AppCompatActivity() {
         _welcomeTextView = findViewById(R.id.welcomeTextView)
         _signoutButton = findViewById(R.id.signoutButton)
 
+
         val email = currentUser.email.toString()
-        val name = getDisplayName(email)
+        val name = currentUser.displayName
+
+        // TODO: check viability
+        // val name = getDisplayName(email)
+
+
         _welcomeTextView.text = "Welcome, ${name} | ${email}"
 
         _signoutButton.setOnClickListener {
@@ -42,22 +47,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //TODO: get app to actually display the user's display name
-    private fun getDisplayName(email: String): String {
-        val users = db.collection("users")
-        var displayName = "user"
-        users.whereEqualTo("email", email).get().addOnSuccessListener { results ->
-            for (user in results) {
-                Log.d("SandwichStore", "getDisplayName: id ${user.id}")
-                Log.d("SandwichStore", "getDisplayName: name 1 ${user.data["display_name"]}")
-                displayName = user.get("${user.id}.display_name").toString()
-            }
-        }.addOnFailureListener { e ->
-            Log.w("SandwichStore", "getDisplayName: unable to retrieve display name", e)
-        }
-
-        Log.d("SandwichStore", "getDisplayName: name 2 ${displayName}")
-        return displayName
-    }
+    //TODO: check viability
+//    private fun getDisplayName(email: String): String {
+//        val users = db.collection("users")
+//        var displayName = "user"
+//        users.whereEqualTo("email", email).get().addOnSuccessListener { results ->
+//            for (user in results) {
+//                Log.d("SandwichStore", "getDisplayName: id ${user.id}")
+//                Log.d("SandwichStore", "getDisplayName: name 1 ${user.data["display_name"]}")
+//                displayName = user.get("${user.id}.display_name").toString()
+//            }
+//        }.addOnFailureListener { e ->
+//            Log.w("SandwichStore", "getDisplayName: unable to retrieve display name", e)
+//        }
+//
+//        Log.d("SandwichStore", "getDisplayName: name 2 ${displayName}")
+//        return displayName
+//    }
 
 }

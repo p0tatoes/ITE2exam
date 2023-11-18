@@ -11,6 +11,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
+import com.google.firebase.auth.userProfileChangeRequest
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 
@@ -92,9 +93,12 @@ class RegisterActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.d(TAG, "registerUser: Registration Successful")
 
-                    val user: FirebaseUser? = auth.currentUser
+                    val user: FirebaseUser = auth.currentUser!!
+                    // Sets the user's display name when creating a password authenticated account
+                    user.updateProfile(userProfileChangeRequest { displayName = name })
+
                     val newUser = hashMapOf(
-                        "email" to user?.email,
+                        "email" to user.email,
                         "display_name" to name
                     )
                     db.collection("users").add(newUser)
