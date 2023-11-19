@@ -18,14 +18,16 @@
             android:id="@+id/registerNameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:text="@string/str_name" />
 
         <EditText
             android:id="@+id/registerNameTextbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:hint="@string/str_name"
+            android:inputType="text"
+            android:minHeight="48dp" />
 
     </LinearLayout>
 
@@ -39,14 +41,16 @@
             android:id="@+id/registerEmailTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email" />
+            android:text="@string/str_email" />
 
         <EditText
             android:id="@+id/registerEmailTextbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/str_email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,14 +63,16 @@
             android:id="@+id/registerPasswordTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password" />
+            android:text="@string/str_password" />
 
         <EditText
             android:id="@+id/registerPasswordTextbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="@string/str_password"
+            android:inputType="textPassword"
+            android:minHeight="48dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,14 +85,16 @@
             android:id="@+id/registerConfirmPassTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Confirm Password" />
+            android:text="@string/str_confirmPassword" />
 
         <EditText
             android:id="@+id/registerConfirmPassTextbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="@string/str_confirmPassword"
+            android:inputType="textPassword"
+            android:minHeight="48dp" />
 
     </LinearLayout>
 

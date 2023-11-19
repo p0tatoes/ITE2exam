@@ -17,13 +17,14 @@
             android:id="@+id/emailLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email" />
+            android:text="@string/str_email" />
 
         <EditText
             android:id="@+id/emailTextbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/str_email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
 
@@ -39,13 +40,14 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password" />
+            android:text="@string/str_password" />
 
         <EditText
             android:id="@+id/passwordTextbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/str_password"
             android:inputType="textPassword"
             android:minHeight="48dp" />
 
@@ -61,13 +63,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="LOGIN" />
+            android:text="@string/str_login" />
 
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="REGISTER" />
+            android:text="@string/str_register" />
 
     </LinearLayout>
 
