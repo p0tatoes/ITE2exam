@@ -34,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
         _loginButton.setOnClickListener {
             var loginEmail: String = _emailTextbox.text.toString()
             var loginPassword: String = _passwordTextbox.text.toString()
+
             signInUser(loginEmail, loginPassword)
         }
 
@@ -55,6 +56,8 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
                 Log.d(TAG, "signInUser: Sign in successful")
+                _emailTextbox.text.clear()
+                _passwordTextbox.text.clear()
                 changeActivity(MainActivity::class.java)
             } else {
                 Log.d(TAG, "signInUser: Sign in failed")
