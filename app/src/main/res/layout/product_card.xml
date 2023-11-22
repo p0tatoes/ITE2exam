@@ -3,29 +3,43 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="20dp"
-    android:background="@color/purple"
+    android:background="#00ffffff"
     android:gravity="left|center_vertical"
     android:orientation="vertical"
     android:paddingHorizontal="50dp"
     android:paddingVertical="30dp">
 
-    <ImageView
-        android:id="@+id/prodImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/vape_mart_logo_bruh" />
-
-    <TextView
-        android:id="@+id/prodNameTextView"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="TextView" />
+        android:layout_height="match_parent"
+        android:background="@color/dark_purple">
 
-    <TextView
-        android:id="@+id/prodPriceTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/prodImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/vape_mart_logo_bruh" />
+
+            <TextView
+                android:id="@+id/prodNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/prodPriceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </LinearLayout>
