@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:background="#261447">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -27,7 +28,9 @@
             android:ems="10"
             android:hint="@string/str_name"
             android:inputType="text"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_edittext"/>
 
     </LinearLayout>
 
@@ -50,7 +53,9 @@
             android:ems="10"
             android:hint="@string/str_email"
             android:inputType="textEmailAddress"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_edittext"/>
     </LinearLayout>
 
     <LinearLayout
@@ -72,7 +77,9 @@
             android:ems="10"
             android:hint="@string/str_password"
             android:inputType="textPassword"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_edittext"/>
     </LinearLayout>
 
     <LinearLayout
@@ -94,7 +101,9 @@
             android:ems="10"
             android:hint="@string/str_confirmPassword"
             android:inputType="textPassword"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_edittext"/>
 
     </LinearLayout>
 
