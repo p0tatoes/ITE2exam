@@ -8,5 +8,5 @@
     <string name="str_login">Login</string>
     <string name="str_register">Register</string>
     <string name="str_logout">Logout</string>
-
+    <string name="str_addprod">Add Product</string>
 </resources>
