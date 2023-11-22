@@ -45,13 +45,16 @@
             android:id="@+id/productListLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
-    </ScrollView>
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/addProductButton"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="@string/str_addprod" />
+            <Button
+                android:id="@+id/addProductButton"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/str_addprod" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
