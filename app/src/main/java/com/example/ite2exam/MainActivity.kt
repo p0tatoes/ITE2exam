@@ -1,8 +1,8 @@
 package com.example.ite2exam
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -47,11 +47,20 @@ class MainActivity : AppCompatActivity() {
         // Retrieves all items in the firestore database
         db.collection("products").get().addOnSuccessListener { results ->
             for (product in results) {
-                Log.d("SandwichViewer", "onCreate: ${product.data}")
                 val prodName = product.data["name"].toString()
                 val prodPrice = product.data["price"].toString()
-                val prodImageURL = product.data["images"].toString()
-                val prodDescription = product.data["name"].toString()
+                val arr_prodImageURL = product.get("images") as List<String>
+                val prodImageURL = arr_prodImageURL[0]
+                val prodDescription = product.data["description"].toString()
+
+                val productItemView = layoutInflater.inflate(R.layout.product_card, null)
+
+                val prodImageView: ImageView = productItemView.findViewById(R.id.prodImageView)
+                val prodNameView: TextView = productItemView.findViewById(R.id.prodNameTextView)
+                val prodPriceView: TextView = productItemView.findViewById(R.id.prodPriceTextView)
+
+                prodNameView.text = prodName
+                prodPriceView.text = prodPrice
             }
         }
     }
