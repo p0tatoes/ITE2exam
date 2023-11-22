@@ -1,11 +1,13 @@
 package com.example.ite2exam
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -49,8 +51,8 @@ class MainActivity : AppCompatActivity() {
             for (product in results) {
                 val prodName = product.data["name"].toString()
                 val prodPrice = product.data["price"].toString()
-                val arr_prodImageURL = product.get("images") as List<String>
-                val prodImageURL = arr_prodImageURL[0]
+                val arrProdImages = product.get("images") as List<String>
+                val prodImageURL = arrProdImages[0]
                 val prodDescription = product.data["description"].toString()
 
                 val productItemView = layoutInflater.inflate(R.layout.product_card, null)
@@ -60,7 +62,19 @@ class MainActivity : AppCompatActivity() {
                 val prodPriceView: TextView = productItemView.findViewById(R.id.prodPriceTextView)
 
                 prodNameView.text = prodName
-                prodPriceView.text = prodPrice
+                prodPriceView.text = "₱${prodPrice}"
+                Glide.with(this).load(prodImageURL).into(prodImageView)
+
+                productItemView.setOnClickListener {
+                    val toProductListing: Intent = Intent(this, ProductListing::class.java)
+                    toProductListing.putExtra("prodName", prodName)
+                    toProductListing.putExtra("prodPrice", prodPrice)
+                    toProductListing.putExtra("prodImage", prodImageURL)
+                    toProductListing.putExtra("prodDescription", prodDescription)
+                    startActivity(toProductListing)
+                }
+
+                _productsListLayout.addView(productItemView)
             }
         }
     }
