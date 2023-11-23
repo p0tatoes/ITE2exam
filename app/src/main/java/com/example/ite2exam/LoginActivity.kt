@@ -53,22 +53,31 @@ class LoginActivity : AppCompatActivity() {
 
     private fun signInUser(email: String, password: String) {
         val TAG = "SandwichCheck"
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
-            if (task.isSuccessful) {
-                Log.d(TAG, "signInUser: Sign in successful")
-                _emailTextbox.text.clear()
-                _passwordTextbox.text.clear()
-                changeActivity(MainActivity::class.java)
-            } else {
-                Log.d(TAG, "signInUser: Sign in failed")
-                val toast = Toast.makeText(
-                    this,
-                    "Login Unsuccessful. Check if your Email and Password are correct",
-                    Toast.LENGTH_LONG
-                )
-                toast.show()
+        try {
+            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Log.d(TAG, "signInUser: Sign in successful")
+                    _emailTextbox.text.clear()
+                    _passwordTextbox.text.clear()
+                    changeActivity(MainActivity::class.java)
+                } else {
+                    Log.d(TAG, "signInUser: Sign in failed")
+                    val toast = Toast.makeText(
+                        this,
+                        "Login Unsuccessful. Check if your Email and Password are correct",
+                        Toast.LENGTH_SHORT
+                    )
+                    toast.show()
+                }
             }
+        } catch (e: Exception) {
+            Toast.makeText(
+                this,
+                "Login Unsuccessful. Check if your Email and Password are correct",
+                Toast.LENGTH_SHORT
+            ).show()
         }
+
     }
 
     private fun changeActivity(activity: Class<*>) {

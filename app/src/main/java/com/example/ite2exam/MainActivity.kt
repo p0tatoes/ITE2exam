@@ -2,7 +2,6 @@ package com.example.ite2exam
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -24,12 +23,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var _welcomeTextView: TextView
     private lateinit var _signoutButton: Button
+    private lateinit var _addProductButton: Button
     private lateinit var _productsListLayout: LinearLayout
 
     // back press event callback; just finishes the activity
     private val backPressCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            Log.d("SandwichViewer", "handleOnBackPressed: Uhhhh")
             auth.signOut()
             finish()
         }
@@ -50,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         _productsListLayout = findViewById(R.id.productListLayout)
         _welcomeTextView = findViewById(R.id.welcomeTextView)
         _signoutButton = findViewById(R.id.signoutButton)
+        _addProductButton = findViewById(R.id.addProductButton)
 
         // Retrieves registered display name
         val name = currentUser.displayName
@@ -58,10 +58,16 @@ class MainActivity : AppCompatActivity() {
         // Handles back press events
         onBackPressedDispatcher.addCallback(this, backPressCallback)
 
-        // Signout button function
+        // Sign out button function
         _signoutButton.setOnClickListener {
             auth.signOut()
             finish()
+        }
+
+        // "Add Product" button function. Switches to add product form view
+        _addProductButton.setOnClickListener {
+            val toAddProduct: Intent = Intent(this, AddItemActivity::class.java)
+            startActivity(toAddProduct)
         }
 
         // Retrieves all items in the firestore database
