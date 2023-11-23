@@ -2,6 +2,7 @@ package com.example.ite2exam
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity() {
     // back press event callback; just finishes the activity
     private val backPressCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
+            Log.d("SandwichViewer", "handleOnBackPressed: Uhhhh")
+            auth.signOut()
             finish()
         }
     }
