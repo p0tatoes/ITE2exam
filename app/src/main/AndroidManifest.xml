@@ -35,6 +35,10 @@
             android:name=".MainActivity"
             android:exported="false"
             android:noHistory="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -20,21 +20,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/paytone_one"
         android:text="TextView"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/prodListingPriceView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/paytone_one"
         android:text="TextView"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/prodListingDescView"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/paytone_one"
         android:text="TextView"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 </LinearLayout>
