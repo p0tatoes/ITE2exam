@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="20dp"
+<<<<<<< HEAD
     android:background="@color/dark_purple"
+=======
+    android:background="#00ffffff"
+>>>>>>> 90fc977497c1707ac547b08a60a5216db480cc4f
     android:gravity="left|center_vertical"
-    android:orientation="vertical"
-    android:paddingHorizontal="50dp"
-    android:paddingVertical="30dp">
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/prodImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/vape_mart_logo_bruh" />
-
-    <TextView
-        android:id="@+id/prodNameTextView"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="TextView"
@@ -30,4 +26,42 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="@color/white"/>
+=======
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:background="@color/dark_purple"
+        app:cardBackgroundColor="@color/dark_purple"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/prodImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/vape_mart_logo_bruh" />
+
+            <TextView
+                android:id="@+id/prodNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/prodPriceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+>>>>>>> 90fc977497c1707ac547b08a60a5216db480cc4f
 </LinearLayout>
