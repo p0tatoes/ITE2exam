@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="20dp"
-    android:layout_marginVertical="50dp"
+    android:background="@color/purple"
     android:gravity="center"
     android:orientation="vertical"
+    android:paddingHorizontal="30dp"
+    android:paddingVertical="50dp"
     tools:context=".AddItemActivity">
 
     <EditText
@@ -15,9 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
+        android:fontFamily="@font/paytone_one"
+        android:gravity="center"
         android:hint="Product Name"
         android:inputType="text"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
 
     <EditText
         android:id="@+id/addDescriptionTextbox"
@@ -25,9 +30,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
+        android:fontFamily="@font/paytone_one"
+        android:gravity="center"
         android:hint="Product Description"
         android:inputType="text"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="#FFFFFF" />
 
     <EditText
         android:id="@+id/addPriceTextbox"
@@ -35,9 +43,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
+        android:fontFamily="@font/paytone_one"
+        android:gravity="center"
         android:hint="Price"
         android:inputType="text"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="#FFFFFF" />
 
     <Button
         android:id="@+id/addImageButton"
