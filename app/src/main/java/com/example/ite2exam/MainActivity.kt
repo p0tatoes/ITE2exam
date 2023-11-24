@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         // "Add Product" button function. Switches to add product form view
         _addProductButton.setOnClickListener {
             val toAddProduct: Intent = Intent(this, AddItemActivity::class.java)
+            finish()
             startActivity(toAddProduct)
         }
 
