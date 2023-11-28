@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ProductListing"
-    android:background="@color/purple">
+    tools:context=".ProductListing">
 
     <ImageView
         android:id="@+id/prodListingImageView"
@@ -33,11 +33,19 @@
         android:text="TextView"
         android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/prodListingDescView"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/paytone_one"
-        android:text="TextView"
-        android:textColor="@color/white" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:id="@+id/prodListingDescView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/paytone_one"
+            android:text="TextView"
+            android:textColor="@color/white" />
+    </ScrollView>
+
 </LinearLayout>

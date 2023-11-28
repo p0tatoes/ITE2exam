@@ -12,13 +12,14 @@
         android:id="@+id/prodListingImageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_marginBottom="30dp"
         android:src="@drawable/vape_mart_logo_bruh" />
 
     <TextView
         android:id="@+id/prodListingNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/paytone_one"
         android:text="TextView"
         android:textColor="@color/white" />
@@ -27,17 +28,24 @@
         android:id="@+id/prodListingPriceView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/paytone_one"
         android:text="TextView"
         android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/prodListingDescView"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="@font/paytone_one"
-        android:text="TextView"
-        android:textColor="@color/white" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/prodListingDescView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/paytone_one"
+            android:text="TextView"
+            android:textColor="@color/white" />
+    </ScrollView>
+
 </LinearLayout>
