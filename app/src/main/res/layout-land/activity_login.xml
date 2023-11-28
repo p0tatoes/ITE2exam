@@ -13,14 +13,13 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="155dp"
-        android:layout_marginBottom="50dp"
         app:srcCompat="@drawable/vape_mart_logo_bruh" />
 
     <EditText
         android:id="@+id/emailTextbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:fontFamily="@font/paytone_one"
@@ -33,7 +32,7 @@
         android:id="@+id/passwordTextbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:fontFamily="@font/paytone_one"
@@ -51,7 +50,7 @@
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="7dp"
             android:fontFamily="@font/paytone_one"
             android:text="@string/str_login" />
 
