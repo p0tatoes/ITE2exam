@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
@@ -43,28 +44,36 @@ class AddItemActivity : AppCompatActivity() {
         _addProductButton = findViewById(R.id.addButton)
 
         _addProductButton.setOnClickListener {
-            val newProdName: String = _newProdNameTextbox.text.toString()
-            val newProdDesc: String = _newProdDescTextbox.text.toString()
-            val newProdPrice: Number = _newProdPriceTextbox.text.toString().toInt()
-            var imageURL: String =
-                "https://firebasestorage.googleapis.com/v0/b/t2023it2-vapemart-cdbb4.appspot.com/o/uploads%2Fvape-mart-default-item.png?alt=media&token=ebab7481-1801-418c-b4fa-c844c90cb322"
+            try {
+                val newProdName: String = _newProdNameTextbox.text.toString()
+                val newProdDesc: String = _newProdDescTextbox.text.toString()
+                val newProdPrice: Number = _newProdPriceTextbox.text.toString().toInt()
+                var imageURL: String =
+                    "https://firebasestorage.googleapis.com/v0/b/t2023it2-vapemart-cdbb4.appspot.com/o/uploads%2Fvape-mart-default-item.png?alt=media&token=ebab7481-1801-418c-b4fa-c844c90cb322"
 
-            val newProductData = hashMapOf(
-                "name" to newProdName,
-                "description" to newProdDesc,
-                "price" to newProdPrice,
-                "images" to listOf<String>(imageURL)
-            )
+                val newProductData = hashMapOf(
+                    "name" to newProdName,
+                    "description" to newProdDesc,
+                    "price" to newProdPrice,
+                    "images" to listOf<String>(imageURL)
+                )
 
-            if (newProdName != "" && newProdDesc != "" && newProdPrice != null) {
-                db.collection("products").add(newProductData).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Log.d(TAG, "New item added: ${it.result.id}")
+                if (newProdName != "" && newProdDesc != "" && newProdPrice != null) {
+                    db.collection("products").add(newProductData).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            Log.d(TAG, "New item added: ${it.result.id}")
 
-                        val toProductsList: Intent = Intent(this, MainActivity::class.java)
-                        startActivity(toProductsList)
-                    } else Log.d(TAG, "Failed to add new item")
+                            val toProductsList: Intent = Intent(this, MainActivity::class.java)
+                            startActivity(toProductsList)
+                        } else Log.d(TAG, "Failed to add new item")
+                    }
+                } else {
+                    Toast.makeText(this, "Please fill up the fields properly", Toast.LENGTH_SHORT)
+                        .show()
                 }
+            } catch (e: Exception) {
+                Toast.makeText(this, "Please fill up the fields properly", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
